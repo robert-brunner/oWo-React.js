@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import sunShineBack from '../../assets/SunnyBeach/sunShineBack.png';
 import oWo from '../../assets/oWo.gif';
 import BaseGame from '../machinery/BaseGame';
+import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
+import Buoy from '../../assets/SunnyBeach/Buoy.png'; 
+import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png'; 
+import SandButton from '../../assets/SunnyBeach/SandButton.png'; 
 
 function Beach() {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'; // Hide scroll bar on body element
+    return () => {
+      document.body.style.overflow = ''; // Restore scroll bar on unmount
+    };
+  }, []);
+
   return (
     <div className="backgroundContainer" style={styles.backgroundContainer}>
       <img src={sunShineBack} alt="sunShineBack" style={styles.backgroundImage} />
-      <img src={oWo} alt="oWo" style={styles.oWoImage} />
+      <img src={SurfBoard} alt="oWo" style={styles.SurfBoard} />
+      <img src={Buoy} alt="oWo" style={styles.Buoy} />
+      <img src={BeachForeGround} alt="oWo" style={styles.ForeGround} />
+      <img src={SandButton} alt="oWo" style={styles.SandButton} />
 
       <div style={styles.container}>
         <BaseGame />
@@ -30,13 +44,39 @@ const styles = {
     height: '100%',
     overflow: 'hidden',
   },
-  oWoImage: {
+  SurfBoard: {
     position: 'absolute',
-    height: 200,
-    width: 200,
+    height: 1300,
+    width: 1300,
     objectFit: 'contain',
-    top: 50,
+    top: 0,
+    left: -250,
   },
+  Buoy: {
+    position: 'absolute',
+    height: 1300,
+    width: 1300,
+    objectFit: 'contain',
+    top: 0,
+    left: -250,
+  },
+  SandButton: {
+    position: 'absolute',
+    height: 1300,
+    width: 1300,
+    objectFit: 'contain',
+    top: 0,
+    left: -250,
+  },
+  ForeGround: {
+    position: 'absolute',
+    height: 1300,
+    width: '100vw', // Adjusted to full viewport width
+    objectFit: 'cover',
+    top: 0,
+    left: 0, // Adjusted to start from the left edge
+  }
+  ,
   container: {
     height: 200,
     width: 200,
