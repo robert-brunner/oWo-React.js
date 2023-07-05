@@ -5,6 +5,7 @@ import BaseGame from '../machinery/BaseGame';
 import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
 import Buoy from '../../assets/SunnyBeach/Buoy.png'; 
 import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png'; 
+import SandButton from '../../assets/SunnyBeach/SandButton.png'; 
 
 function Beach() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function Beach() {
       <img src={SurfBoard} alt="oWo" style={styles.SurfBoard} />
       <img src={Buoy} alt="oWo" style={styles.Buoy} />
       <img src={BeachForeGround} alt="oWo" style={styles.ForeGround} />
+      <img src={SandButton} alt="oWo" style={styles.SandButton} />
 
       <div style={styles.container}>
         <BaseGame />
@@ -51,6 +53,14 @@ const styles = {
     left: -250,
   },
   Buoy: {
+    position: 'absolute',
+    height: 1300,
+    width: 1300,
+    objectFit: 'contain',
+    top: 0,
+    left: -250,
+  },
+  SandButton: {
     position: 'absolute',
     height: 1300,
     width: 1300,
