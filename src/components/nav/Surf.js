@@ -3,7 +3,8 @@ import sunShineBack from '../../assets/SunnyBeach/sunShineBack.png';
 import oWo from '../../assets/oWo.gif';
 import BaseGame from '../machinery/BaseGame';
 import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
-import Buoy from '../../assets/SunnyBeach/Buoy.png';
+import Buoy from '../../assets/SunnyBeach/Buoy.png'; 
+import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png'; 
 
 function Beach() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function Beach() {
       <img src={sunShineBack} alt="sunShineBack" style={styles.backgroundImage} />
       <img src={SurfBoard} alt="oWo" style={styles.SurfBoard} />
       <img src={Buoy} alt="oWo" style={styles.Buoy} />
+      <img src={BeachForeGround} alt="oWo" style={styles.ForeGround} />
 
       <div style={styles.container}>
         <BaseGame />
@@ -56,6 +58,15 @@ const styles = {
     top: 0,
     left: -250,
   },
+  ForeGround: {
+    position: 'absolute',
+    height: 1300,
+    width: '100vw', // Adjusted to full viewport width
+    objectFit: 'cover',
+    top: 0,
+    left: 0, // Adjusted to start from the left edge
+  }
+  ,
   container: {
     height: 200,
     width: 200,
