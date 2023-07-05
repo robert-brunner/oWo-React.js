@@ -23,7 +23,7 @@ function Beach() {
       <img src={BeachForeGround} alt="oWo" style={styles.ForeGround} />
       <img src={SandButton} alt="oWo" style={styles.SandButton} />
 
-      <div style={styles.container}>
+      <div style={styles.Gameontainer}>
         <BaseGame />
       </div>
     </div>
@@ -90,6 +90,7 @@ const styles = {
     justifyContent: 'center',
     top: -20,
   },
+
 };
 
 export default Beach;
