@@ -17,7 +17,7 @@ function Beach() {
   const baseGameStyles = {
     container: {
       backgroundColor: '',
-      top: 460,
+      top: 490,
       left: 300,
       
     },
@@ -27,7 +27,7 @@ function Beach() {
       minWidth: 271,
       position: 'relative',
       right: -14,
-      minHeight: 40,
+      minHeight: 35,
       textAlign: 'center',
     },
     button: {
