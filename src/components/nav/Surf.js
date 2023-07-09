@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import sunShineBack from '../../assets/SunnyBeach/sunShineBack.png';
 import BaseGame from '../machinery/BaseGame';
 import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
-import Buoy from '../../assets/SunnyBeach/Buoy.png'; 
-import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png'; 
-import SandButton from '../../assets/SunnyBeach/SandButton.png'; 
+import Buoy from '../../assets/SunnyBeach/Buoy.png';
+import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png';
+import SandButton from '../../assets/SunnyBeach/SandButton.png';
 
 function Beach() {
   useEffect(() => {
@@ -17,24 +17,22 @@ function Beach() {
   const baseGameStyles = {
     container: {
       backgroundColor: '',
-      top: 460,
-      left: 300,
-      
+      top: '49%',
+      left: '30%',
     },
     input: {
       backgroundColor: 'transparent',
       borderColor: 'rgba(0, 0, 0, 0)',
-      minWidth: 271,
+      minWidth: '27.1%',
       position: 'relative',
-      right: -14,
-      minHeight: 40,
+      right: '-1.4%',
+      minHeight: '3.5%',
       textAlign: 'center',
     },
     button: {
       backgroundColor: 'pink',
     },
   };
-  
 
   return (
     <div className="backgroundContainer" style={styles.backgroundContainer}>
@@ -53,9 +51,7 @@ function Beach() {
       <img src={SandButton} alt="oWo" style={styles.SandButton} />
     </div>
   );
-  
 }
-
 
 const styles = {
   backgroundContainer: {
@@ -73,28 +69,28 @@ const styles = {
   },
   SurfBoard: {
     position: 'absolute',
-    height: 1300,
-    width: 1300,
+    height: '130%',
+    width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: -250,
+    left: '-25%',
   },
   Buoy: {
     position: 'absolute',
-    height: 1300,
-    width: 1300,
+    height: '130%',
+    width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: -250,
+    left: '-25%',
     zIndex: 0,
   },
   container: {
     position: 'absolute',
     height: '20%',
     width: '20%',
-    borderRadius: 16,
-    padding: 16,
-    borderWidth: 8,
+    borderRadius: '16%',
+    padding: '1.6%',
+    borderWidth: '0.8%',
     borderColor: 'rgba(0,0,0,0.2)',
     backgroundColor: '#e1e4e8',
     display: 'flex',
@@ -105,7 +101,7 @@ const styles = {
   },
   ForeGround: {
     position: 'absolute',
-    height: 1300,
+    height: '130%',
     width: '100vw',
     objectFit: 'cover',
     top: 0,
@@ -113,11 +109,11 @@ const styles = {
   },
   SandButton: {
     position: 'absolute',
-    height: 1300,
-    width: 1300,
+    height: '130%',
+    width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: -250,
+    left: '-25%',
   },
 };
 

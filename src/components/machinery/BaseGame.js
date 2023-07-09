@@ -56,8 +56,7 @@ function BaseGame({ styles }) {
 
   return (
     <div>
-      <p>{tries < 5 ? `Hint: ${hint}` : 'Password Game'}</p>
-      <p>Enter the password:</p>
+      <p>{tries < 5 ? `Hint: ${hint}` : ''}</p>
       <div>
         <input
           alt="alpha"
