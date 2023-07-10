@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function BaseGame({ styles }) {
+function BaseGame({ styles, messageStyle }) {
   const WORDS = {
     "BERRY": ["Fruit", "Drupe", "Pome", "Hip", "Achenes"],
     "TEMPLE": ["Sanctuary", "Shrine", "Tabernacle", "Cathedral", "Church"],
@@ -56,25 +56,29 @@ function BaseGame({ styles }) {
 
   return (
     <div>
-      <p>{tries < 5 ? `Hint: ${hint}` : ''}</p>
+      <p style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</p>
+      <p style={styles.hint}>{hint}</p>
       <div>
-        <input
-          alt="alpha"
-          type="text"
-          onChange={(event) => setPassword(event.target.value)}
-          value={password}
-          style={styles.input}
-        />
-        <p style={{ height: '40px', margin: '0' }}>{message}</p>
+        <div>
+          <input
+            alt="alpha"
+            type="text"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+            style={styles.input}
+          />
+          <button onClick={checkPassword} style={styles.button}>
+            Submit
+          </button>
+        </div>
+        <button onClick={playAgain} style={styles.button}>
+          Play Again
+        </button>
       </div>
-      <button onClick={checkPassword} style={styles.button}>
-        Submit
-      </button>
-      <button onClick={playAgain} style={styles.button}>
-        Play Again
-      </button>
     </div>
   );
+  
+  
 }
 
 export default BaseGame;

@@ -27,12 +27,24 @@ function Beach() {
       position: 'relative',
       right: '-1.4%',
       minHeight: '3.5%',
-      textAlign: 'center',
+      textAlign: 'left',
+      width: '160%',
     },
     button: {
       backgroundColor: 'pink',
     },
+    hint: {
+      color: 'red', // Apply red color to the hint element
+      top: '-39%',
+      position: 'absolute',
+      left: '62%',
+      transform: 'translateX(-50%)',
+    },
+    message: {
+      color: 'purple', // Apply purple color to the message element
+    },
   };
+  
 
   return (
     <div className="backgroundContainer" style={styles.backgroundContainer}>
@@ -43,7 +55,9 @@ function Beach() {
         <BaseGame
           styles={{
             input: baseGameStyles.input,
-            button: baseGameStyles.button
+            button: baseGameStyles.button,
+            hint: baseGameStyles.hint, // Pass the hint style
+            messageStyle: baseGameStyles.message, // Pass the message style
           }}
         />
       </div>
@@ -58,6 +72,7 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    display: 'flex', // Add this line to enable flexbox
   },
   backgroundImage: {
     position: 'absolute',
@@ -73,7 +88,7 @@ const styles = {
     width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: '-25%',
+    left: '-15%',
   },
   Buoy: {
     position: 'absolute',
@@ -81,13 +96,13 @@ const styles = {
     width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: '-25%',
+    left: '-15%',
     zIndex: 0,
   },
   container: {
     position: 'absolute',
-    height: '20%',
-    width: '20%',
+    height: '25%',
+    width: '30%',
     borderRadius: '16%',
     padding: '1.6%',
     borderWidth: '0.8%',
@@ -113,7 +128,7 @@ const styles = {
     width: '130%',
     objectFit: 'contain',
     top: 0,
-    left: '-25%',
+    left: '-15%',
   },
 };
 
