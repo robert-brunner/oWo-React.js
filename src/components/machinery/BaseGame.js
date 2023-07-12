@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function BaseGame({ styles, messageStyle }) {
+function BaseGame({ styles, messageStyle, hintStyle }) {
   const WORDS = {
     "BERRY": ["Fruit", "Drupe", "Pome", "Hip", "Achenes"],
     "TEMPLE": ["Sanctuary", "Shrine", "Tabernacle", "Cathedral", "Church"],
@@ -56,8 +56,12 @@ function BaseGame({ styles, messageStyle }) {
 
   return (
     <div>
-      <p style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</p>
-      <p style={styles.hint}>{hint}</p>
+      <div>
+        <p alt="NOTICE" style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</p>
+      </div>
+      <div>
+        <p alt="SUGGESTION" style={{ ...styles.hint, ...hintStyle }}>{hint}</p>
+      </div>
       <div>
         <div>
           <input
@@ -77,8 +81,6 @@ function BaseGame({ styles, messageStyle }) {
       </div>
     </div>
   );
-  
-  
 }
 
 export default BaseGame;

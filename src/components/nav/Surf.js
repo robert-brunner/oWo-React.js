@@ -30,7 +30,7 @@ function Beach() {
       top: '49%',
       left: '30%',
     },
-    input: {
+    input: {  // Input field 
       backgroundColor: 'transparent',
       borderColor: 'rgba(0, 0, 0, 0)',
       minWidth: '27.1%',
@@ -43,7 +43,7 @@ function Beach() {
     button: {
       backgroundColor: 'pink',
     },
-    hint: {
+    hint: {  //center of buoy
       color: 'black',
       top: '-39%',
       position: 'absolute',
@@ -51,10 +51,7 @@ function Beach() {
       transform: 'translateX(-50%)',
     },
     message: {
-      color: 'purple',
-    },
-    div: {
-      // Styles for the parent div
+      color: 'blue',
     },
     p: {
       fontFamily: 'Akaya Telivigala',
