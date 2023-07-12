@@ -5,6 +5,7 @@ import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
 import Buoy from '../../assets/SunnyBeach/Buoy.png';
 import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png';
 import SandButton from '../../assets/SunnyBeach/SandButton.png';
+import '../../App.css';
 
 function Beach() {
   useEffect(() => {
@@ -12,6 +13,15 @@ function Beach() {
     return () => {
       document.body.style.overflow = ''; // Restore scroll bar on unmount
     };
+  }, []);
+
+    // Import the Google Fonts directly in Beach.js
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href =
+      '//fonts.googleapis.com/css2?family=Akaya+Telivigala:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
   }, []);
 
   const baseGameStyles = {
@@ -34,14 +44,23 @@ function Beach() {
       backgroundColor: 'pink',
     },
     hint: {
-      color: 'red', // Apply red color to the hint element
+      color: 'black',
       top: '-39%',
       position: 'absolute',
       left: '62%',
       transform: 'translateX(-50%)',
     },
     message: {
-      color: 'purple', // Apply purple color to the message element
+      color: 'purple',
+    },
+    div: {
+      // Styles for the parent div
+    },
+    p: {
+      fontFamily: 'Akaya Telivigala',
+      display: '',
+      fontSize: '20px',
+      lineHeight: '70%',
     },
   };
   
