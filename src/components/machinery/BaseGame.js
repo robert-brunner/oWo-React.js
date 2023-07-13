@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Keyboard from './KeyBoard';
+// import Keyboard from './KeyBoard';
+import Keyboard2 from './VirtKeyboard2';
+// import Keyboard from '/KeyBoard2';
+// import Keyboard2 from '/VirKeyboard2';
 
 function BaseGame({ styles, messageStyle, hintStyle }) {
   const WORDS = {
@@ -55,7 +58,13 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
     setHint('');
   };
   const handleVirtualKeyPress = (key) => {
-    setPassword(password + key);
+    if (key === 'Enter') {
+      checkPassword();
+    } else if (key === 'Del') {
+      setPassword(password.slice(0, -1));
+    } else {
+      setPassword(password + key);
+    }
   };
 
   return (
@@ -85,7 +94,7 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
         </button>
       </div>
       <div className='onscreenKeyboard' style={{ width: '100%' }}>
-        <Keyboard onKeyPress={handleVirtualKeyPress} />
+        <Keyboard2 onKeyPress={handleVirtualKeyPress} />
       </div>
     </div>
   );

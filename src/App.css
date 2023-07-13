@@ -35,5 +35,30 @@ body {
     left: 30%;
   }
   
-  
  }
+
+
+
+ .keyboard-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.keyboard-row + .keyboard-row {
+  margin-top: 1rem;
+}
+
+.keyboard-button {
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--color-bg-light);
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  height: 58px;
+  flex: 1 1;
+}
