@@ -83,7 +83,7 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
             type="text"
             onChange={(event) => setPassword(event.target.value)}
             value={password}
-            style={styles.input}
+            style={{ ...styles.input, pointerEvents: 'none' }}
           />
           <button onClick={checkPassword} style={styles.button}>
             Start

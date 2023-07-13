@@ -38,6 +38,10 @@ const Keyboard2 = ({ onKeyPress }) => {
     document.dispatchEvent(new KeyboardEvent('keyup', { key }));
   };
 
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+  };
+
   const letters = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
@@ -52,19 +56,26 @@ const Keyboard2 = ({ onKeyPress }) => {
             <button
               className="keyboard-button"
               onClick={() => handleClick(letter)}
+              onTouchStart={handleTouchStart}
               key={letter}
             >
-              {letter}
+              <span className="keyboard-button-text" style={{ userSelect: 'none' }}>
+                {letter}
+              </span>
             </button>
           ))}
         </div>
       ))}
       <div className="keyboard-row">
-        <button className="keyboard-button" onClick={() => handleClick('Enter')}>
-          Enter
+        <button className="keyboard-button" onClick={() => handleClick('Enter')} onTouchStart={handleTouchStart}>
+          <span className="keyboard-button-text" style={{ userSelect: 'none' }}>
+            Enter
+          </span>
         </button>
-        <button className="keyboard-button" onClick={() => handleClick('Del')}>
-          Del
+        <button className="keyboard-button" onClick={() => handleClick('Del')} onTouchStart={handleTouchStart}>
+          <span className="keyboard-button-text" style={{ userSelect: 'none' }}>
+            Del
+          </span>
         </button>
       </div>
     </div>
