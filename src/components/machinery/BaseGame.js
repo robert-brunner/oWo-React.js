@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Keyboard from './KeyBoard';
 
 function BaseGame({ styles, messageStyle, hintStyle }) {
   const WORDS = {
@@ -53,11 +54,15 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
     setTries(5);
     setHint('');
   };
+  const handleVirtualKeyPress = (key) => {
+    setPassword(password + key);
+  };
 
   return (
     <div>
+
       <div>
-        <p alt="NOTICE" style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</p>
+      <span className="beachBoard" alt="NOTICE" style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</span>
       </div>
       <div>
         <p alt="SUGGESTION" style={{ ...styles.hint, ...hintStyle }}>{hint}</p>
@@ -72,12 +77,15 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
             style={styles.input}
           />
           <button onClick={checkPassword} style={styles.button}>
-            Submit
+            Start
           </button>
         </div>
         <button onClick={playAgain} style={styles.button}>
           Play Again
         </button>
+      </div>
+      <div>
+        <Keyboard onKeyPress={handleVirtualKeyPress} />
       </div>
     </div>
   );

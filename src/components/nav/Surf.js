@@ -52,6 +52,8 @@ function Beach() {
     },
     message: {
       color: 'blue',
+      position: 'absolute',
+      top: '-39%',
     },
     p: {
       fontFamily: 'Akaya Telivigala',
@@ -72,8 +74,8 @@ function Beach() {
           styles={{
             input: baseGameStyles.input,
             button: baseGameStyles.button,
-            hint: baseGameStyles.hint, // Pass the hint style
-            messageStyle: baseGameStyles.message, // Pass the message style
+            hint: baseGameStyles.hint, // hint style
+            messageStyle: baseGameStyles.message, // message style
           }}
         />
       </div>
