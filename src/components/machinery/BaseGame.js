@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import Keyboard from './KeyBoard';
 import Keyboard2 from './VirtKeyboard2';
-// import Keyboard from '/KeyBoard2';
-// import Keyboard2 from '/VirKeyboard2';
 
 function BaseGame({ styles, messageStyle, hintStyle }) {
   const WORDS = {
@@ -20,8 +17,8 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
   const [gameWord, setGameWord] = useState('');
   const [tries, setTries] = useState(5);
   const [hint, setHint] = useState('');
+  const [gameStarted, setGameStarted] = useState(false);
 
-  // Select a word at random when the component is mounted
   useEffect(() => {
     const wordsArray = Object.keys(WORDS);
     const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
@@ -42,7 +39,7 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
         setHint(hints[5 - tries]);
       }
     }
-  
+
     const attempts = JSON.parse(localStorage.getItem('Attempts')) || [];
     attempts.push(password);
     localStorage.setItem('Attempts', JSON.stringify(attempts));
@@ -61,7 +58,9 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
     setMessage('');
     setTries(5);
     setHint('');
+    setGameStarted(false);
   };
+
   const handleVirtualKeyPress = (key) => {
     if (key === 'Enter') {
       checkPassword();
@@ -74,33 +73,44 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
 
   return (
     <div>
-
       <div>
-      <span className="beachBoard" alt="NOTICE" style={{ height: '40px', margin: '0', ...messageStyle }}>{message}</span>
+        <span className="beachBoard" alt="NOTICE" style={{ height: '40px', margin: '0', ...messageStyle }}>
+          {message}
+        </span>
       </div>
       <div>
-        <p alt="SUGGESTION" style={{ ...styles.hint, ...hintStyle }}>{hint}</p>
+        <p alt="SUGGESTION" style={{ ...styles.hint, ...hintStyle }}>
+          {hint}
+        </p>
       </div>
       <div>
-        <div>
-          <input
-            alt="alpha"
-            type="text"
-            onChange={(event) => setPassword(event.target.value)}
-            value={password}
-            style={{ ...styles.input, pointerEvents: 'none' }}
-          />
-          <button onClick={checkPassword} style={styles.button}>
-            Start
+        {!gameStarted && (
+          <button onClick={() => setGameStarted(true)} style={styles.button}>
+            Play
           </button>
+        )}
+        {gameStarted && (
+          <div>
+            <input
+              alt="alpha"
+              type="text"
+              onChange={(event) => setPassword(event.target.value)}
+              value={password}
+              style={{ ...styles.input, pointerEvents: 'none' }}
+            />
+          </div>
+        )}
+        {(tries <= 1 || password.toUpperCase() === gameWord.toUpperCase()) && (
+          <button onClick={playAgain} style={styles.button}>
+            Play Again
+          </button>
+        )}
+      </div>
+      {gameStarted && (
+        <div className='onscreenKeyboard' style={{ width: '100%' }}>
+          <Keyboard2 onKeyPress={handleVirtualKeyPress} />
         </div>
-        <button onClick={playAgain} style={styles.button}>
-          Play Again
-        </button>
-      </div>
-      <div className='onscreenKeyboard' style={{ width: '100%' }}>
-        <Keyboard2 onKeyPress={handleVirtualKeyPress} />
-      </div>
+      )}
     </div>
   );
 }
