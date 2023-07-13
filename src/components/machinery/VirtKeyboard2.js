@@ -38,93 +38,30 @@ const Keyboard2 = ({ onKeyPress }) => {
     document.dispatchEvent(new KeyboardEvent('keyup', { key }));
   };
 
+  const letters = [
+    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+    ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+  ];
+
   return (
     <div id="game-keyboard">
-      <div className="keyboard-row">
-        <button className="keyboard-button" onClick={() => handleClick('q')}>
-          q
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('w')}>
-          w
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('e')}>
-          e
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('r')}>
-          r
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('t')}>
-          t
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('y')}>
-          y
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('u')}>
-          u
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('i')}>
-          i
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('o')}>
-          o
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('p')}>
-          p
-        </button>
-      </div>
-      <div className="keyboard-row">
-        <button className="keyboard-button" onClick={() => handleClick('a')}>
-          a
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('s')}>
-          s
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('d')}>
-          d
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('f')}>
-          f
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('g')}>
-          g
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('h')}>
-          h
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('j')}>
-          j
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('k')}>
-          k
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('l')}>
-          l
-        </button>
-      </div>
+      {letters.map((row, index) => (
+        <div className="keyboard-row" key={index}>
+          {row.map((letter) => (
+            <button
+              className="keyboard-button"
+              onClick={() => handleClick(letter)}
+              key={letter}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
+      ))}
       <div className="keyboard-row">
         <button className="keyboard-button" onClick={() => handleClick('Enter')}>
           Enter
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('z')}>
-          z
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('x')}>
-          x
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('c')}>
-          c
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('v')}>
-          v
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('b')}>
-          b
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('n')}>
-          n
-        </button>
-        <button className="keyboard-button" onClick={() => handleClick('m')}>
-          m
         </button>
         <button className="keyboard-button" onClick={() => handleClick('Del')}>
           Del
