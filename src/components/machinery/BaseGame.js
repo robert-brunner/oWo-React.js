@@ -84,7 +84,7 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
           Play Again
         </button>
       </div>
-      <div>
+      <div className='onscreenKeyboard' style={{ width: '100%' }}>
         <Keyboard onKeyPress={handleVirtualKeyPress} />
       </div>
     </div>
