@@ -42,6 +42,11 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
         setHint(hints[5 - tries]);
       }
     }
+  
+    const attempts = JSON.parse(localStorage.getItem('Attempts')) || [];
+    attempts.push(password);
+    localStorage.setItem('Attempts', JSON.stringify(attempts));
+    setPassword('');
   };
 
   const displayMessage = (msg) => {

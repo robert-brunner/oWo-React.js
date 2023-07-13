@@ -41,6 +41,7 @@ const Keyboard2 = ({ onKeyPress }) => {
   const handleTouchStart = (e) => {
     e.preventDefault();
   };
+  
 
   const letters = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
