@@ -1,72 +1,45 @@
-export class RopePoint {
-    static integrate(point, gravity, dt, previousFrameDt) {
-      // Integration calculations
-    }
+export const Rope = () => {
+    var rope = document.querySelector('.rope');
+
+// Update the rope's height and position on mouse move
+document.addEventListener('mousemove', function(e) {
+  var y = e.clientY;
+  var windowHeight = window.innerHeight;
+  var ropeHeight = Math.abs(y - windowHeight / 2);
+
+  rope.style.height = ropeHeight + 'px';
+  rope.style.top = (windowHeight / 2 + Math.min(y, windowHeight / 2)) + 'px';
+});
+
+// Reset the rope's height on mouse leave
+document.addEventListener('mouseleave', function() {
+  rope.style.height = '2px'; // Set the initial height here
+});
+
+// Bounce effect on mouse hover
+rope.addEventListener('mouseover', function() {
+    rope.style.height = '10px'; // Adjust the height of the bounce
+  });
   
-    static constrain(point) {
-      // Constraint calculations
-    }
+  rope.addEventListener('mouseout', function() {
+    var y = e.clientY;
+    var windowHeight = window.innerHeight;
+    var ropeHeight = Math.abs(y - windowHeight / 2);
   
-    constructor(initialPos, distanceToNextPoint) {
-      // RopePoint constructor
-    }
-  }
+    rope.style.height = ropeHeight + 'px';
+    rope.style.top = (windowHeight / 2 + Math.min(y, windowHeight / 2)) + 'px';
+  });
   
-  export class Rope {
-    static generate(start, end, resolution, mass, damping) {
-      // Rope generation
-    }
-  
-    constructor(points, solverIterations) {
-      // Rope constructor
-    }
-  
-    update(gravity, dt) {
-      // Rope update function
-    }
-  
-    getPoint(index) {
-      // Get a specific point from the rope
-    }
-  }
-  
-  const canvas = document.getElementById("canvas");
-  const context = canvas.getContext("2d");
-  
-  const args = {
-    // Animation parameters
-  };
-  
-  const points = Rope.generate(
-    args.start,
-    args.end,
-    args.resolution,
-    args.mass,
-    args.damping
-  );
-  
-  let rope = new Rope(points, args.solverIterations);
-  
-  const tick = dt => {
-    rope.update(args.gravity, dt);
-  };
-  
-  const drawRopePoints = (context, points, colour, width) => {
-    // Draw rope points on the canvas
-  };
-  
-  const draw = (canvas, context, dt) => {
-    drawRopePoints(context, points, args.ropeColour, args.ropeSize);
-  };
-  
-  const onMouseMove = (x, y) => {
-    let point = rope.getPoint(0);
-    point.pos.x = x;
-    point.pos.y = y;
-  };
-  
-  const app = new App(window, canvas, context, tick, draw, 60);
-  
-  app.onMouseMoveHandler = onMouseMove;
-  app.start();
+
+}
+
+{/* <div class="rope"></div> */}
+
+
+// .rope {
+//     position: absolute;
+//     height: 2px;
+//     background-color: #000000; /* adjust color as desired */
+//     transition: height 0.3s ease;
+//   }
   
