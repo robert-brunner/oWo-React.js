@@ -7,7 +7,7 @@ export default function ApplicationViews() {
   return (
     <Routes>
       <Route path="/SurfGame" element={<Beach />} />
-      <Route path="/SurfMenu" element={<BeachMenu />} />
+      <Route path="/*" element={<BeachMenu />} />
     </Routes>
   );
 }
