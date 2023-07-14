@@ -7,6 +7,7 @@ import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png';
 import SandButton from '../../assets/SunnyBeach/SandButton.png';
 import '../../App.css';
 
+
 function Beach() {
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // Hide scroll bar on body element
