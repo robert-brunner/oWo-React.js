@@ -18,16 +18,19 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
   const [tries, setTries] = useState(5);
   const [hint, setHint] = useState('');
   const [gameStarted, setGameStarted] = useState(false);
+  const [correctWordEntered, setCorrectWordEntered] = useState(false);
 
   useEffect(() => {
     const wordsArray = Object.keys(WORDS);
     const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
     setGameWord(randomWord);
+    setHint(WORDS[randomWord][0]);
   }, []);
 
   const checkPassword = () => {
     if (password.toUpperCase() === gameWord.toUpperCase()) {
-      displayMessage('Correct password! You win!');
+      displayMessage(`Correct! ${gameWord}`);
+      setCorrectWordEntered(true);
     } else {
       setTries(tries - 1);
       if (tries <= 1) {
@@ -54,11 +57,12 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
     const wordsArray = Object.keys(WORDS);
     const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
     setGameWord(randomWord);
+    setHint(WORDS[randomWord][0]);
     setPassword('');
     setMessage('');
     setTries(5);
-    setHint('');
-    setGameStarted(false);
+    setGameStarted(true);
+    setCorrectWordEntered(false);
   };
 
   const handleVirtualKeyPress = (key) => {
@@ -98,13 +102,18 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
               value={password}
               style={{ ...styles.input, pointerEvents: 'none' }}
             />
+            {correctWordEntered && (
+              <button onClick={playAgain} style={styles.button}>
+                Play Again
+              </button>
+            )}
           </div>
         )}
-        {(tries <= 1 || password.toUpperCase() === gameWord.toUpperCase()) && (
+        {/* {(tries <= 1 || password.toUpperCase() !== gameWord.toUpperCase()) && (
           <button onClick={playAgain} style={styles.button}>
             Play Again
           </button>
-        )}
+        )} */}
       </div>
       {gameStarted && (
         <div className='onscreenKeyboard' style={{ width: '100%' }}>
