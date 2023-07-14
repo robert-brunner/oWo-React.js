@@ -74,6 +74,7 @@ function BaseGame({ styles, messageStyle, hintStyle }) {
       setPassword(password + key);
     }
   };
+  
 
   return (
     <div>

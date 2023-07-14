@@ -38,17 +38,17 @@ body {
  }
 
 
-
+/* row individual */
  .keyboard-row {
   display: flex;
   justify-content: center;
   gap: 2px;
 }
-
+/* all rows */
 .keyboard-row + .keyboard-row {
   margin-top: 0.2rem;
 }
-
+/* button parameters */
 .keyboard-button {
   border-radius: 10%;
   justify-content: center;
@@ -63,7 +63,7 @@ body {
   width: 20%;
   height: 40px;
 }
-
+/* BoardBody */
 #game-keyboard {
   width: 80%;
   margin: 0 auto;
@@ -72,7 +72,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-
+/* button borders */
 #game-keyboard .keyboard-button {
   border-top-left-radius: 12%;
   border-top-right-radius: 12%;
@@ -106,5 +106,4 @@ body {
 
 -shark?  animation? trees?
 
-!Romans8:28!
 */
