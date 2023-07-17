@@ -93,6 +93,16 @@ body {
 
 
 
+.Beach p {
+  color: blue;
+  position: absolute;
+  top: -150%;
+}
+.Beach h3 {
+  color: Black;
+  position: absolute;
+  top: -150%;
+}
 
   
 
