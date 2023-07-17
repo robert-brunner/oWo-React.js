@@ -1,14 +1,269 @@
 body {
-  height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   overflow-y: hidden;
+}
+
+#root {
+  height: 100%;
 }
 
 /* Import Google Fonts */
 @import url("//fonts.googleapis.com/css2?family=Audiowide:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   /* Division */
   #root .container > div {
     font-family: 'Audiowide', display;
   }
 }
+
+@import url("//fonts.googleapis.com/css2?family=Akaya+Telivigala:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+
+
+@media (max-width:768px){
+
+  /* Span Tag */
+  #root div span.beachBoard {
+    position: absolute;
+    top: -121%;
+    text-align: center;
+    font-style: normal;
+    direction: ltr;
+    left: 30%;
+  }
+  
+ }
+
+
+/* row individual */
+ .keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+/* all rows */
+.keyboard-row + .keyboard-row {
+  margin-top: 0.2rem;
+}
+/* button parameters */
+.keyboard-button {
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--color-bg-light);
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  flex: 1 1;
+  width: 20%;
+  height: 40px;
+}
+/* BoardBody */
+#game-keyboard {
+  width: 80%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* button borders */
+#game-keyboard .keyboard-button {
+  border-top-left-radius: 12%;
+  border-top-right-radius: 12%;
+  border-bottom-left-radius: 12%;
+  border-bottom-right-radius: 12px;
+  border-color:#039be7;
+  border-width:3px;
+  box-shadow:0px 0px 11px 6px #ffffff inset;
+  color:#020202;
+  font-size:10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none !important;
+}
+
+
+
+.Beach p {
+  color: blue;
+  position: absolute;
+  top: -150%;
+}
+.Beach h3 {
+  color: Black;
+  position: absolute;
+  top: -150%;
+}
+
+  
+
+
+
+
+/*Surf       Menu*
+
+Need to target the elements in BaseGame and call them Surf or Gear or steampunk!!!  FUTURE REFERENCE.  BRAIN FART!!!/
+
+
+/* .surf-menu .container {
+  background-color: '';
+  top: 49%;
+  left: 30%;
+}
+
+.surf-menu .container input {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
+  min-width: 27.1%;
+  position: relative;
+  right: -1.4%;
+  min-height: 3.5%;
+  text-align: left;
+  width: 160%;
+}
+
+.surf-menu .container button {
+  background-color: transparent;
+  border-color: transparent;
+  position: absolute;
+  height: 33%;
+  width: 190%;
+  object-fit: contain;
+  top: 32%;
+  left: -30%;
+  font-family: 'Akaya Telivigala';
+  font-size: 20px;
+  color: white;
+}
+
+.surf-menu .container p.hint {
+  color: black;
+  top: -39%;
+  position: absolute;
+  left: 62%;
+  transform: translateX(-50%);
+}
+
+.surf-menu .container span.message {
+  color: blue;
+  position: absolute;
+  top: -39%;
+}
+
+.surf-menu .container p {
+  font-family: 'Akaya Telivigala';
+  display: '';
+  font-size: 20px;
+  line-height: 70%;
+}
+
+.surf-menu .backgroundContainer {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.surf-menu .backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.surf-menu .SurfBoard {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+}
+
+.surf-menu .Buoy {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+  z-index: 0;
+}
+
+.surf-menu .container {
+  position: absolute;
+  height: 25%;
+  width: 30%;
+  border-radius: 16%;
+  padding: 1.6%;
+  border-width: 0.8%;
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #e1e4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 1;
+}
+
+.surf-menu .ForeGround {
+  position: absolute;
+  height: 130%;
+  width: 100vw;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.surf-menu .SandButton {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*user-select: none;*/
+
+/*TOMORROW CODING! GOALS!!
+
+-instead of surfboard, add NET.  localStorage words fall into net in random spots. 
+
+-need to make word at center of buoy resize itself if larger than margins.  need to add better shading or backdrop to buoy. 
+
+-keypress sounds.... (HEADACHE)
+
+-shark?  animation? trees?
+
+*/
