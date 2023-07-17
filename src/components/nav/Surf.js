@@ -5,6 +5,7 @@ import SurfBoard from '../../assets/SunnyBeach/SurfBoard.png';
 import Buoy from '../../assets/SunnyBeach/Buoy.png';
 import BeachForeGround from '../../assets/SunnyBeach/BeachForeGround.png';
 import SandButton from '../../assets/SunnyBeach/SandButton.png';
+import Hammock from '../../assets/SunnyBeach/Hammock.png';
 import '../../App.css';
 
 
@@ -68,7 +69,7 @@ function Beach() {
   return (
     <div className="backgroundContainer" style={styles.backgroundContainer}>
       <img src={sunShineBack} alt="sunShineBack" style={styles.backgroundImage} />
-      <img src={SurfBoard} alt="oWo" style={styles.SurfBoard} />
+      <img src={Hammock} alt="oWo" style={styles.Hammock} />
       <img src={Buoy} alt="oWo" style={styles.Buoy} />
       <div className="container" style={{ ...styles.container, ...baseGameStyles.container }}>
         <BaseGame
@@ -101,10 +102,19 @@ const styles = {
     height: '100%',
     overflow: 'hidden',
   },
-  SurfBoard: {
+  // SurfBoard: {
+  //   position: 'absolute',
+  //   height: '130%',
+  //   width: '130%',
+  //   objectFit: 'contain',
+  //   top: 0,
+  //   left: '-15%',
+  // },
+
+    Hammock: {
     position: 'absolute',
-    height: '130%',
-    width: '130%',
+    height: '100%',
+    width: '100%',
     objectFit: 'contain',
     top: 0,
     left: '-15%',
