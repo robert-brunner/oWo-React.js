@@ -94,6 +94,156 @@ body {
 
 
 
+  
+
+
+
+
+/*Surf       Menu*
+
+Need to target the elements in BaseGame and call them Surf or Gear or steampunk!!!  FUTURE REFERENCE.  BRAIN FART!!!/
+
+
+/* .surf-menu .container {
+  background-color: '';
+  top: 49%;
+  left: 30%;
+}
+
+.surf-menu .container input {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
+  min-width: 27.1%;
+  position: relative;
+  right: -1.4%;
+  min-height: 3.5%;
+  text-align: left;
+  width: 160%;
+}
+
+.surf-menu .container button {
+  background-color: transparent;
+  border-color: transparent;
+  position: absolute;
+  height: 33%;
+  width: 190%;
+  object-fit: contain;
+  top: 32%;
+  left: -30%;
+  font-family: 'Akaya Telivigala';
+  font-size: 20px;
+  color: white;
+}
+
+.surf-menu .container p.hint {
+  color: black;
+  top: -39%;
+  position: absolute;
+  left: 62%;
+  transform: translateX(-50%);
+}
+
+.surf-menu .container span.message {
+  color: blue;
+  position: absolute;
+  top: -39%;
+}
+
+.surf-menu .container p {
+  font-family: 'Akaya Telivigala';
+  display: '';
+  font-size: 20px;
+  line-height: 70%;
+}
+
+.surf-menu .backgroundContainer {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.surf-menu .backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.surf-menu .SurfBoard {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+}
+
+.surf-menu .Buoy {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+  z-index: 0;
+}
+
+.surf-menu .container {
+  position: absolute;
+  height: 25%;
+  width: 30%;
+  border-radius: 16%;
+  padding: 1.6%;
+  border-width: 0.8%;
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #e1e4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 1;
+}
+
+.surf-menu .ForeGround {
+  position: absolute;
+  height: 130%;
+  width: 100vw;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.surf-menu .SandButton {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: contain;
+  top: 0;
+  left: -15%;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*user-select: none;*/
 
 /*TOMORROW CODING! GOALS!!

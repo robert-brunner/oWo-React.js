@@ -6,8 +6,8 @@ import BeachMenu from '../nav/SurfMenu';
 export default function ApplicationViews() {
   return (
     <Routes>
-      <Route path="/SurfGame" element={<Beach />} />
       <Route path="/*" element={<BeachMenu />} />
+      <Route path="/SurfGame" element={<Beach />} />
     </Routes>
   );
 }
